@@ -1,6 +1,26 @@
 import { Button, Card, Container, Grid, Slider, Text } from '@mantine/core'
 import { Gauge } from "lucide-react"
+import { useState } from 'react'
 function App() {
+
+  const [vry, setVry] = useState(330)
+  const [Vyb, setVyb] = useState(330)
+  const [Vbr, setVbr] = useState(330)
+  const [Temp, setTemp] = useState(39)
+  const [Cr, setCr] = useState(2)
+  const [Cy, setCy] = useState(2)
+  const [Cb, setCb] = useState(2)
+
+
+  const handleClick = ()=>{
+    console.log(vry)
+    console.log(Vyb)
+    console.log(Vbr)
+    console.log(Temp)
+    console.log(Cr)
+    console.log(Cy)
+    console.log(Cb)
+  }
 
   return (
     <>
@@ -28,10 +48,12 @@ function App() {
                     <div>
                     <Slider
                       color="blue"
-                      min={220} max={440} step={1}
+                      value={vry}
+                      onChange={setVry}
+                      min={330} max={440} step={1}
                       marks={[
-                        { value: 220, label: '220' },
                         { value: 330, label: '330' },
+                        { value: 385, label: '385' },
                         { value: 440, label: '440' },
                       ]}
                     />
@@ -59,10 +81,12 @@ function App() {
                     <div>
                     <Slider
                       color="blue"
-                      min={220} max={440} step={1}
+                      value={Vyb}
+                      onChange={setVyb}
+                      min={330} max={440} step={1}
                       marks={[
-                        { value: 220, label: '220' },
                         { value: 330, label: '330' },
+                        { value: 385, label: '385' },
                         { value: 440, label: '440' },
                       ]}
                     />
@@ -90,10 +114,12 @@ function App() {
                     <div>
                     <Slider
                       color="blue"
-                      min={220} max={440} step={1}
+                      value={Vbr}
+                      onChange={setVbr}
+                      min={330} max={440} step={1}
                       marks={[
-                        { value: 220, label: '220' },
                         { value: 330, label: '330' },
+                        { value: 385, label: '385' },
                         { value: 440, label: '440' },
                       ]}
                     />
@@ -121,6 +147,8 @@ function App() {
                     <div>
                     <Slider
                       color="blue"
+                      value={Temp}
+                      onChange={setTemp}
                       min={39} max={59} step={1}
                       marks={[
                         { value: 39, label: '39' },
@@ -152,11 +180,13 @@ function App() {
                     <div>
                     <Slider
                       color="blue"
-                      min={410} max={420} step={1}
+                      value={Cr}
+                      onChange={setCr}
+                      min={2} max={15} step={1}
                       marks={[
-                        { value: 410, label: '410' },
-                        { value: 415, label: '415' },
-                        { value: 420, label: '420' },
+                        { value: 2, label: '2' },
+                        { value: 8, label: '8' },
+                        { value: 15, label: '15' },
                       ]}
                     />
                     <br></br>
@@ -183,11 +213,13 @@ function App() {
                     <div>
                     <Slider
                       color="blue"
-                      min={410} max={420} step={1}
+                      value={Cy}
+                      onChange={setCy}
+                      min={2} max={15} step={1}
                       marks={[
-                        { value: 410, label: '410' },
-                        { value: 415, label: '415' },
-                        { value: 420, label: '420' },
+                        { value: 2, label: '2' },
+                        { value: 8, label: '8' },
+                        { value: 15, label: '15' },
                       ]}
                     />
                     <br></br>
@@ -214,11 +246,13 @@ function App() {
                     <div>
                     <Slider
                       color="blue"
-                      min={410} max={420} step={1}
+                      value={Cb}
+                      onChange={setCb}
+                      min={2} max={15} step={1}
                       marks={[
-                        { value: 410, label: '410' },
-                        { value: 415, label: '415' },
-                        { value: 420, label: '420' },
+                        { value: 2, label: '2' },
+                        { value: 8, label: '8' },
+                        { value: 15, label: '15' },
                       ]}
                     />
                     <br></br>
@@ -229,7 +263,7 @@ function App() {
             </Card>
           </Grid.Col>
           <Grid.Col span={6}>
-            <Button variant="filled" fullWidth color="green" size="xl">Start</Button>
+            <Button onClick={handleClick} variant="filled" fullWidth color="green" size="xl">Start</Button>
           </Grid.Col>
           <Grid.Col span={6}>
             <Button variant="filled" fullWidth color="red" size="xl">Stop</Button>
